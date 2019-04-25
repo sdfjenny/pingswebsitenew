@@ -25,6 +25,9 @@ function NarrowItDownController (GetJsonService){
 	var Searcher = this;
 	Searcher.name = "搜索";
 	Searcher.showthings = false;
+	Searcher.count = 0;
+	
+	
 	
 	
 	
@@ -56,12 +59,29 @@ function NarrowItDownController (GetJsonService){
 			
 			
 		}
-		
+		Searcher.count = Searcher.count +1;
 		Searcher.items = foundItems;
 		if (foundItems.length >0){
 			Searcher.showthings = true;
+			$('#search-content').css('display', 'block');
+			$('#search-content')
+			.mouseover(function(){
+				$('#search-content').css('display', 'block');
+			})
+			.mouseout(function(){
+				$('#search-content').css('display', 'none');
+			});
+			
 		}
-		else {Searcher.showthings = false;}
+		else {Searcher.showthings = false;
+			$('#search-content').css('display', 'block');
+			$('#search-content')
+			.mouseover(function(){
+				$('#search-content').css('display', 'block');
+			})
+			.mouseout(function(){
+				$('#search-content').css('display', 'none');
+			});}
 		
 		
 		
